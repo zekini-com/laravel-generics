@@ -1,0 +1,37 @@
+{
+    "name": "zekini/laravel-generics",
+    "description": "A simple package to encapsulate all of our generic classes at zekini to a package we can require in all our projects",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "Keania Niate Eric",
+        "email": "keaniaeric@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "fakerphp/faker": "1.17.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zekini\\Generics\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zekini\\Generics\\GenericsServiceProvider"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zekini\\Generics\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "6.x-dev",
+        "nunomaduro/collision": "dev-stable",
+        "phpunit/phpunit": "9.5.x-dev"
+    }
+}
