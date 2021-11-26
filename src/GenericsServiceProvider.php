@@ -16,7 +16,8 @@ class GenericsServiceProvider extends ServiceProvider
         // register commands
         if ($this->app->runningInConsole()) {
             $this->commands([
-                Commands\ResetLocalPassword::class
+                Commands\ResetLocalPassword::class,
+                Commands\MakeGenericCommand::class
             ]);
         }
         

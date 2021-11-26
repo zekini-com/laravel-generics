@@ -44,7 +44,7 @@ class ResetLocalPassword extends Command
         
         // check the environment the app is running
         $appEnv = app()->environment();
-        dump($appEnv);
+     
         if (($appEnv != "local") && ($appEnv != "testing")) {
             $this->error(" Your application has to be in the local environment before you can reset");
             return Command::SUCCESS;
