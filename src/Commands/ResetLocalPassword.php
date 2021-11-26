@@ -5,6 +5,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
+use Zekini\Generics\Helpers\EnvironmentHelper;
 
 class ResetLocalPassword extends Command
 {
@@ -45,7 +46,7 @@ class ResetLocalPassword extends Command
         // check the environment the app is running
         $appEnv = app()->environment();
      
-        if (($appEnv != "local") && ($appEnv != "testing")) {
+        if (!EnvironmentHelper::isLocal() && !EnvironmentHelper::isTesting()) {
             $this->error(" Your application has to be in the local environment before you can reset");
             return Command::SUCCESS;
         }
