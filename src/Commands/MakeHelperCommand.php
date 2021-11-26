@@ -11,6 +11,9 @@ use Zekini\Generics\Helpers\BaseHelper;
 
 class MakeHelperCommand extends GeneratorCommand
 {
+
+    protected $hidden = true;
+
     /**
      * The name and signature of the console command.
      *

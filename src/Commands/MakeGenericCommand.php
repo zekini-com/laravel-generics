@@ -10,6 +10,8 @@ use Illuminate\Console\GeneratorCommand;
 
 class MakeGenericCommand extends GeneratorCommand
 {
+
+    protected $hidden = true;
     /**
      * The name and signature of the console command.
      *
