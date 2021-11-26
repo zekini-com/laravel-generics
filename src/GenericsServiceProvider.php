@@ -17,7 +17,8 @@ class GenericsServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 Commands\ResetLocalPassword::class,
-                Commands\MakeGenericCommand::class
+                Commands\MakeGenericCommand::class,
+                Commands\MakeHelperCommand::class
             ]);
         }
         

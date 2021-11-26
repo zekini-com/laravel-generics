@@ -2,7 +2,7 @@
 namespace Zekini\Generics\Helpers;
 
 
-class EnvironmentHelper extends BaseHelper
+abstract class BaseHelper
 {
 
     
