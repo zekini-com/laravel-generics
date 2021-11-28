@@ -3,13 +3,13 @@
 
   
 
-The **zekini/laravel-generics** package allows us to store our generate classes in a package so we can reuse
+The **zekini/laravel-generics** package allows us to store our generic classes in a package so we can reuse them
 
   
 
 **Installation**
 
-    composer require zekini/laravel-generics
+    composer require --dev zekini/laravel-generics
 
  
 Publish vendor configurations
@@ -21,7 +21,7 @@ Publish vendor configurations
 To reset password in a local database environment
 
 
-    php artisan local:password-reset
+    php artisan local:password-reset --password=password
 
 
 To add another generic command
