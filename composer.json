@@ -1,6 +1,6 @@
 {
     "name": "zekini/laravel-generics",
-    "description": "A simple package to encapsulate all of our generic classes at zekini to a package we can require in all our projects",
+    "description": "A simple package to encapsulate all of our generic classes at Zekini to a package we can require in all our projects",
     "type": "library",
     "license": "MIT",
     "authors": [{
@@ -10,7 +10,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.2 || ^8.0",
-        "fakerphp/faker": "1.17.x-dev"
+        "fakerphp/faker": "^1.16"
     },
     "autoload": {
         "psr-4": {
