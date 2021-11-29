@@ -11,10 +11,7 @@ The **zekini/laravel-generics** package allows us to store our generic classes i
 
     composer require --dev zekini/laravel-generics
 
- 
-Publish vendor configurations
 
-    php artisan vendor:publish --provider="Zekini\Generics\GenericsServiceProvider"
 
 **Usage**
 
