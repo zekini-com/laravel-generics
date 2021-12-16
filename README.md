@@ -33,3 +33,10 @@ To add another generic helper
 
     use Zekini\Generics\Helpers\EnvironmentHelper;
 
+**Standard Packages**
+
+    https://github.com/spatie/laravel-backup
+
+    https://github.com/spatie/laravel-schedule-monitor
+
+    https://github.com/ARCANEDEV/LogViewer
