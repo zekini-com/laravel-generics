@@ -25,7 +25,7 @@ class ResetLocalPassword extends Command
      *
      * @var string
      */
-    protected $description = 'resets the password when in local environment';
+    protected $description = 'Resets the password when in local environment';
 
     /**
      * Create a new command instance.
@@ -46,8 +46,8 @@ class ResetLocalPassword extends Command
         // check the environment the app is running
         $appEnv = app()->environment();
 
-        if (! EnvironmentHelper::isLocal() && ! EnvironmentHelper::isTesting()) {
-            $this->error(' Your application has to be in the local environment before you can reset');
+        if (EnvironmentHelper::isProd()) {
+            $this->error(' Your application has to be in one of local / testing / staging environments before you can reset');
             return Command::SUCCESS;
         }
 
