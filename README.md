@@ -9,7 +9,7 @@ The **zekini/laravel-generics** package allows us to store our generic classes i
 
 **Installation**
 
-    composer require --dev zekini/laravel-generics
+    composer require zekini/laravel-generics
 
 
 
@@ -18,13 +18,18 @@ The **zekini/laravel-generics** package allows us to store our generic classes i
 To reset password in a local database environment
 
 
-    php artisan local:password-reset --password=password
+    ./vendor/bin/sail artisan local:password-reset --password=password
 
 
 To add another generic command
 
-    php artisan generic:command TestCommand
+    ./vendor/bin/sail artisan generic:command TestCommand
 
 To add another generic helper
 
-    php artisan generic:helper TestHelper
+    ./vendor/bin/sail artisan generic:helper TestHelper
+
+**Available Helpers**
+
+use Zekini\Generics\Helpers\EnvironmentHelper;
+

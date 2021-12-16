@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "964d8b9ca919fb73aa507752389cb847",
+    "content-hash": "96b11ab1065aa6f0500afccb41942216",
     "packages": [
         {
             "name": "fakerphp/faker",
@@ -1217,6 +1217,66 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2021-11-25T15:33:13+00:00"
+        },
+        {
+            "name": "laravel/sail",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "2cfbc807aa2abd11202b8b8af9f457bdb9893042"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/2cfbc807aa2abd11202b8b8af9f457bdb9893042",
+                "reference": "2cfbc807aa2abd11202b8b8af9f457bdb9893042",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^8.0|^9.0",
+                "illuminate/contracts": "^8.0|^9.0",
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^7.3|^8.0"
+            },
+            "bin": [
+                "bin/sail"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Sail\\SailServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Sail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Docker files for running a basic Laravel application.",
+            "keywords": [
+                "docker",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/sail/issues",
+                "source": "https://github.com/laravel/sail"
+            },
+            "time": "2021-12-14T17:55:21+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -7941,16 +8001,16 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "fakerphp/faker": 20,
         "orchestra/testbench": 20,
         "nunomaduro/collision": 20,
-        "phpunit/phpunit": 20
+        "phpunit/phpunit": 20,
+        "laravel/sail": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2 || ^8.0"
+        "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
