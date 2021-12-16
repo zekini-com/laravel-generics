@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Zekini\Generics\Commands;
 
 use Illuminate\Console\Command;
@@ -26,13 +29,10 @@ class ResetLocalPassword extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @return void
      */
     public function __construct()
     {
         parent::__construct();
-
     }
 
     /**
@@ -42,33 +42,35 @@ class ResetLocalPassword extends Command
      */
     public function handle()
     {
-        
+
         // check the environment the app is running
         $appEnv = app()->environment();
-     
-        if (!EnvironmentHelper::isLocal() && !EnvironmentHelper::isTesting()) {
-            $this->error(" Your application has to be in the local environment before you can reset");
+
+        if (! EnvironmentHelper::isLocal() && ! EnvironmentHelper::isTesting()) {
+            $this->error(' Your application has to be in the local environment before you can reset');
             return Command::SUCCESS;
         }
 
         // Check users table exist
         if (! Schema::hasTable('users')) {
-            $this->error(" Users table does not exists in the database");
+            $this->error(' Users table does not exists in the database');
             return Command::SUCCESS;
         }
-        $faker  = \Faker\Factory::create();
+        $faker = \Faker\Factory::create();
         $password = $this->option('password') ?? $faker->word;
 
         if (! Schema::hasColumn('users', 'password')) {
-            $this->error("password does not exists as a database table column");
+            $this->error('password does not exists as a database table column');
             return Command::SUCCESS;
         }
-        
-        // Start Reset Password
-        DB::table('users')->update(['password'=> Hash::make($password)]);
 
-        $this->info("Success : All local passwords changed to $password");
-        
+        // Start Reset Password
+        DB::table('users')->update([
+            'password' => Hash::make($password),
+        ]);
+
+        $this->info("Success : All local passwords changed to ${password}");
+
         return Command::SUCCESS;
     }
 }

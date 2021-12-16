@@ -1,15 +1,21 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Zekini\Generics\Helpers;
 
 use Illuminate\Support\Facades\App;
 
-
 class EnvironmentHelper extends BaseHelper
 {
-
     public static function isLocal(): bool
     {
         return App::environment('local') ? true : false;
+    }
+
+    public static function isStaging(): bool
+    {
+        return App::environment('staging') ? true : false;
     }
 
     public static function isTesting(): bool
@@ -30,6 +36,16 @@ class EnvironmentHelper extends BaseHelper
     public static function isNotProd(): bool
     {
         return ! self::isProd();
+    }
+
+    public static function isNotStaging(): bool
+    {
+        return ! self::isStaging();
+    }
+
+    public static function isNotTesting(): bool
+    {
+        return ! self::isTesting();
     }
 
     public static function exitIfLocal(string $class, int $line, string $message): void

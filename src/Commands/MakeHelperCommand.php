@@ -1,17 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Zekini\Generics\Commands;
 
-use Illuminate\Support\Str;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Console\GeneratorCommand;
+use Illuminate\Support\Str;
 use Zekini\Generics\Helpers\BaseHelper;
 
 class MakeHelperCommand extends GeneratorCommand
 {
-
     protected $hidden = true;
 
     /**
@@ -28,7 +27,6 @@ class MakeHelperCommand extends GeneratorCommand
      */
     protected $description = 'creates a new zekini-generic helper class';
 
-    
     /**
      * Type of class the command creates
      *
@@ -36,7 +34,30 @@ class MakeHelperCommand extends GeneratorCommand
      */
     protected $type = BaseHelper::class;
 
-    
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        parent::handle();
+
+        //Get the fully qualified class name (FQN)
+        $class = $this->qualifyClass($this->getNameInput());
+
+        // get the destination path, based on the default namespace
+        $path = $this->getPath($class);
+
+        $content = file_get_contents($path);
+
+        // Update the file content with additional data (regular expressions)
+
+        file_put_contents($path, $content);
+
+        return Command::SUCCESS;
+    }
+
     /**
      * Get the command stub
      *
@@ -47,7 +68,6 @@ class MakeHelperCommand extends GeneratorCommand
         return __DIR__ . './../../stubs/generic-helpers.php.stub';
     }
 
-    
     /**
      * Gets Default Namespace
      *
@@ -68,44 +88,14 @@ class MakeHelperCommand extends GeneratorCommand
     protected function getPath($name)
     {
         $name = Str::replaceFirst($this->rootNamespace(), '', $name);
-        return __DIR__.'/../'.str_replace('\\', '/', $name).'.php';
+        return __DIR__ . '/../' . str_replace('\\', '/', $name) . '.php';
     }
 
-    
     /**
      * rootNamespace
-     *
-     * @return void
      */
     protected function rootNamespace()
     {
         return "Zekini\Generics";
-    }
-
-
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-    public function handle()
-    {
-
-        parent::handle();
-
-        //Get the fully qualified class name (FQN)
-        $class = $this->qualifyClass($this->getNameInput());
-
-        // get the destination path, based on the default namespace
-        $path = $this->getPath($class);
-
-        $content = file_get_contents($path);
-
-        // Update the file content with additional data (regular expressions)
-
-        file_put_contents($path, $content);
-        
-        
-        return Command::SUCCESS;
     }
 }

@@ -1,31 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Zekini\Generics\Tests\Unit;
 
-use Zekini\Generics\Tests\TestCase;
 use Illuminate\Support\Facades\File;
+use Zekini\Generics\Tests\TestCase;
 
 class MakeGenericHelperTest extends TestCase
 {
-
-    
-    /**
-     * Get path to file
-     *
-     * @param  mixed $name
-     * @return string
-     */
-    protected function getPath($name)
-    {
-        return __DIR__.'./../../src/'.$name;
-    }
-
-
-    /** @test */
-    function test_it_creates_a_new_test_helper()
+    public function testItCreatesANewTestHelper()
     {
         // destination path of the Foo class
-        $fooClass = $this->getPath("Helpers/TestHelper.php");
-
+        $fooClass = $this->getPath('Helpers/TestHelper.php');
 
         // make sure we're starting from a clean state
         if (File::exists($fooClass)) {
@@ -35,13 +22,25 @@ class MakeGenericHelperTest extends TestCase
         $this->assertFalse(File::exists($fooClass));
 
         // Run the make command
-        $this->artisan('generic:helper', ['name'=>'TestHelper']);
+        $this->artisan('generic:helper', [
+            'name' => 'TestHelper',
+        ]);
 
         // Assert a new file is created
         $this->assertTrue(File::exists($fooClass));
 
         //unlink the file
         unlink($fooClass);
+    }
 
+    /**
+     * Get path to file
+     *
+     * @param  mixed $name
+     * @return string
+     */
+    protected function getPath($name)
+    {
+        return __DIR__ . './../../src/' . $name;
     }
 }
