@@ -31,5 +31,5 @@ To add another generic helper
 
 **Available Helpers**
 
-use Zekini\Generics\Helpers\EnvironmentHelper;
+    use Zekini\Generics\Helpers\EnvironmentHelper;
 

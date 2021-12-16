@@ -56,4 +56,13 @@ class EnvironmentHelper extends BaseHelper
             exit;
         }
     }
+
+    public static function exitIfProd(string $class, int $line, string $message): void
+    {
+        if (self::isProd()) {
+            logger($class . ' @ ' . $line . ' ' . $message);
+
+            exit;
+        }
+    }
 }
