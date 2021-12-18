@@ -48,19 +48,19 @@ class EnvironmentHelper extends BaseHelper
         return ! self::isTesting();
     }
 
-    public static function exitIfLocal(string $class, int $line, string $message): void
+    public static function exitIfLocal(string $class, int $line, string $message = null): void
     {
         if (self::isLocal()) {
-            logger($class . ' @ ' . $line . ' ' . $message);
+            logger($class . ' @ ' . $line . ' ' . $message ?? 'Dont run on Local');
 
             exit;
         }
     }
 
-    public static function exitIfProd(string $class, int $line, string $message): void
+    public static function exitIfProd(string $class, int $line, string $message = null): void
     {
         if (self::isProd()) {
-            logger($class . ' @ ' . $line . ' ' . $message);
+            logger($class . ' @ ' . $line . ' ' . $message ?? 'Dont run on Prod');
 
             exit;
         }
