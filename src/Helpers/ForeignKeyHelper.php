@@ -14,7 +14,7 @@ class ForeignKeyHelper
     {
         set_time_limit(0);
 
-        DB::statement('ALTER TABLE ' . $table_name . ' CHANGE COLUMN id id INT UNSIGNED NOT NULL AUTO_INCREMENT ;');
+        DB::statement('ALTER TABLE ' . $table_name . ' CHANGE COLUMN id id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT ;');
     }
 
     public static function dropForeignKeys(string $table_name): void
@@ -47,7 +47,7 @@ class ForeignKeyHelper
 
             $index_name = 'fk_' . $value['table_name'] . '_' . $table_name;
 
-            if (! Schema::hasTable($value['table_name'])) {
+            if (!Schema::hasTable($value['table_name'])) {
                 continue;
             }
 
@@ -70,9 +70,9 @@ class ForeignKeyHelper
                 continue;
             }
 
-            if ($value['is_nullable'] !== 'NO' || $value['data_type'] !== 'int' || $value['column_type'] !== 'int unsigned') {
+            if ($value['is_nullable'] !== 'NO' || $value['data_type'] !== 'bigint' || $value['column_type'] !== 'bigint unsigned') {
                 $statement = 'ALTER TABLE ' . $value['table_name'] . ' CHANGE COLUMN ' . $field_name . ' ' . $field_name . ' INT UNSIGNED NOT NULL;';
-                logger(__CLASS__ . ' ' . __FUNCTION__ . ': Fk is wrong. Recreating: ' . $statement);
+                logger(__CLASS__ . ' ' . __FUNCTION__ . ': Fk is wrong (is_nullable:' . $value['is_nullable'] . ' data_type:' . $value['data_type'] . ' column_type:' . $value['column_type'] . '). Recreating: ' . $statement);
                 DB::statement($statement);
             }
 
