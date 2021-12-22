@@ -40,7 +40,7 @@ class ForeignKeyHelper
         foreach ($tablesArray as $value) {
             logger(__CLASS__ . ' ' . __FUNCTION__ . ' ' . $value['table_name']);
 
-            if (in_array($value['table_name'], config('foreign-key.ignore_tables'), true)) {
+            if (in_array($value['table_name'], config('foreign-key.ignore_tables') ?? [], true)) {
                 logger(__CLASS__ . ' ' . __FUNCTION__ . ': Ignoring ' . $value['table_name']);
                 continue;
             }
@@ -109,8 +109,8 @@ class ForeignKeyHelper
             FROM 
                 information_schema.key_column_usage 
             WHERE 
-                # CONSTRAINT_SCHEMA = TABLE_SCHEMA = "' . config('database.connections.mysql.database') . '" AND 
-                referenced_table_name IS NOT NULL
+                TABLE_SCHEMA = "' . config('database.connections.mysql.database') . '" 
+                AND referenced_table_name IS NOT NULL
                 AND referenced_column_name = "id"
                 AND referenced_table_name = :table_name
                 ;',
@@ -140,8 +140,8 @@ class ForeignKeyHelper
             FROM 
                 information_schema.columns 
             WHERE 
-                # TABLE_SCHEMA = "' . config('database.connections.mysql.database') . '" AND 
-                COLUMN_NAME = :field_name
+                TABLE_SCHEMA = "' . config('database.connections.mysql.database') . '" 
+                AND COLUMN_NAME = :field_name
                 ;',
             [
                 'field_name' => $field_name,
@@ -164,5 +164,33 @@ class ForeignKeyHelper
         logger(__CLASS__ . ' ' . __FUNCTION__ . ' ' . $statement);
 
         DB::statement($statement);
+    }
+
+    public static function fixInvalidDates(): void
+    {
+        $invalidDates = DB::select(
+            '
+            SELECT 
+                TABLE_NAME as "table_name",
+                COLUMN_NAME as "column_name",
+                IS_NULLABLE as "is_nullable",
+                DATA_TYPE as "data_type",
+                COLUMN_TYPE as "column_type"
+            FROM 
+                information_schema.columns 
+            WHERE 
+                TABLE_SCHEMA = "' . config('database.connections.mysql.database') . '" 
+                AND COLUMN_DEFAULT like "%0000-00-00 00:00:00%"
+                ;'
+        );
+
+        foreach ($invalidDates as $invalidDate) {
+            $statement = "
+                ALTER TABLE $invalidDate->table_name
+                    CHANGE COLUMN $invalidDate->column_name $invalidDate->column_name $invalidDate->data_type NULL DEFAULT NULL
+                ;";
+            logger(__CLASS__ . ' ' . __FUNCTION__ . ' ' . $statement);
+            DB::statement($statement);
+        }
     }
 }
