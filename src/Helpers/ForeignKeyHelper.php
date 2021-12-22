@@ -71,7 +71,7 @@ class ForeignKeyHelper
             }
 
             if ($value['is_nullable'] !== 'NO' || $value['data_type'] !== 'bigint' || $value['column_type'] !== 'bigint unsigned') {
-                $statement = 'ALTER TABLE ' . $value['table_name'] . ' CHANGE COLUMN ' . $field_name . ' ' . $field_name . ' INT UNSIGNED NOT NULL;';
+                $statement = 'ALTER TABLE ' . $value['table_name'] . ' CHANGE COLUMN ' . $field_name . ' ' . $field_name . ' BIGINT UNSIGNED NOT NULL;';
                 logger(__CLASS__ . ' ' . __FUNCTION__ . ': Fk is wrong (is_nullable:' . $value['is_nullable'] . ' data_type:' . $value['data_type'] . ' column_type:' . $value['column_type'] . '). Recreating: ' . $statement);
                 DB::statement($statement);
             }
