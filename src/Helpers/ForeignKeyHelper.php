@@ -157,13 +157,15 @@ class ForeignKeyHelper
 
     private static function deleteOrphanedData(string $pk_table, string $fk_table, string $field_name): void
     {
-        set_time_limit(0);
+        return;
 
-        $statement = 'DELETE FROM ' . $fk_table . ' WHERE ' . $field_name . ' NOT IN (SELECT id FROM ' . $pk_table . ');';
+        // set_time_limit(0);
 
-        logger(__CLASS__ . ' ' . __FUNCTION__ . ' ' . $statement);
+        // $statement = 'DELETE FROM ' . $fk_table . ' WHERE ' . $field_name . ' is not null AND ' . $field_name . ' NOT IN (SELECT id FROM ' . $pk_table . ');';
 
-        DB::statement($statement);
+        // logger(__CLASS__ . ' ' . __FUNCTION__ . ' ' . $statement);
+
+        // DB::statement($statement);
     }
 
     public static function fixInvalidDates(): void
