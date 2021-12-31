@@ -35,6 +35,7 @@
     "require-dev": {
         "orchestra/testbench": "6.x-dev",
         "nunomaduro/collision": "dev-stable",
-        "phpunit/phpunit": "9.5.x-dev"
+        "phpunit/phpunit": "9.5.x-dev",
+        "barryvdh/laravel-debugbar": "3.6.x-dev"
     }
 }
