@@ -40,3 +40,7 @@ To add another generic helper
     https://github.com/spatie/laravel-schedule-monitor
 
     https://github.com/ARCANEDEV/LogViewer
+
+
+**Removed to be re-added once conflict is resolved**
+        "spatie/laravel-backup"

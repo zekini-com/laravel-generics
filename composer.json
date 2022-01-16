@@ -12,8 +12,7 @@
         "php": "^8.0",
         "arcanedev/log-viewer": "dev-master",
         "fakerphp/faker": "^1.16",
-        "spatie/laravel-schedule-monitor": "dev-main",
-        "spatie/laravel-backup": "^8.0"
+        "spatie/laravel-schedule-monitor": "dev-main"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "3.6.x-dev",
