@@ -17,7 +17,8 @@
         "livewire/livewire": "^2.7",
         "mediconesystems/livewire-datatables": "dev-master",
         "spatie/laravel-activitylog": "dev-main",
-        "spatie/laravel-permission": "^5.4"
+        "spatie/laravel-permission": "^5.4",
+        "mattlibera/livewire-flash": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "3.6.x-dev",
