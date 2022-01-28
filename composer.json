@@ -21,10 +21,14 @@
         "mattlibera/livewire-flash": "dev-master"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "3.6.x-dev",
-        "nunomaduro/collision": "dev-stable",
+        "barryvdh/laravel-debugbar": "^3.6",
+        "nunomaduro/collision": "5.3",
+        "nunomaduro/larastan": "^0.7.0",
         "orchestra/testbench": "6.x-dev",
-        "phpunit/phpunit": "9.5.x-dev"
+        "phpunit/phpunit": "9.5.x-dev",
+        "protoqol/prequel": "^1.22",
+        "symplify/easy-coding-standard": "^9.4",
+        "vimeo/psalm": "^4.7"
     },
     "autoload": {
         "psr-4": {
