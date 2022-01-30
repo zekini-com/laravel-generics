@@ -35,8 +35,6 @@ class GenericsServiceProvider extends ServiceProvider
 
     protected function publishSpatiePermissionVendor(): void
     {
-        $this->info(__FUNCTION__);
-
         self::undoPreviousMigrations([
             'model_has_permissions',
             'role_has_permissions',
@@ -58,8 +56,6 @@ class GenericsServiceProvider extends ServiceProvider
 
     protected function publishSpatieActivitylogVendor(): void
     {
-        $this->info(__FUNCTION__);
-
         self::undoPreviousMigrations(['activity_logs']);
 
         $this->call('vendor:publish', [
