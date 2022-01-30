@@ -20,6 +20,7 @@ class GenericsServiceProvider extends ServiceProvider
                 Commands\ResetLocalPassword::class,
                 Commands\MakeGenericCommand::class,
                 Commands\MakeHelperCommand::class,
+                Commands\StubCodeCheckersCommand::class,
             ]);
         }
     }

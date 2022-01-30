@@ -21,6 +21,12 @@ To reset password in a local database environment
     ./vendor/bin/sail artisan local:password-reset --password=password
 
 
+To generate or update the code checkers configs:
+
+
+    ./vendor/bin/sail artisan local:code-checkers:stub
+
+
 To add another generic command
 
     ./vendor/bin/sail artisan generic:command TestCommand
@@ -31,6 +37,7 @@ To add another generic helper
 
 **Available Helpers**
 
+    use Zekini\Generics\Helpers\ArrayHelper;
     use Zekini\Generics\Helpers\EnvironmentHelper;
 
 **Standard Packages**
