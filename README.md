@@ -11,19 +11,18 @@ The **zekini/laravel-generics** package allows us to store our generic classes i
 
     composer require zekini/laravel-generics
 
-    sail artisan vendor:publish --tag=code-checkers-config
+    sail artisan vendor:publish --tag=zekini-config
 
 **Usage**
 
 To reset password in a local database environment
-
 
     sail artisan local:password-reset --password=password
 
 
 To generate or update the code checkers config files:
 
-    sail artisan vendor:publish --tag=code-checkers-config
+    sail artisan vendor:publish --tag=zekini-config --force
 
 
 To add another generic command

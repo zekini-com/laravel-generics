@@ -17,7 +17,7 @@ class GenericsServiceProvider extends ServiceProvider
             __DIR__ . '/../stubs/ecs.php' => base_path('ecs.php'),
             __DIR__ . '/../stubs/phpstan.neon' => base_path('phpstan.neon'),
             __DIR__ . '/../stubs/psalm.xml' => base_path('psalm.xml'),
-        ], 'code-checkers-config');
+        ], 'zekini-config');
 
         // register commands
         if ($this->app->runningInConsole()) {
