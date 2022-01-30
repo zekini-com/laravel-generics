@@ -14,9 +14,9 @@ class GenericsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '../../stubs/ecs.php' => base_path('ecs.php'),
-            __DIR__ . '../../stubs/phpstan.neon' => base_path('phpstan.neon'),
-            __DIR__ . '../../stubs/psalm.xml' => base_path('psalm.xml'),
+            __DIR__ . '/../stubs/ecs.php' => base_path('ecs.php'),
+            __DIR__ . '/../stubs/phpstan.neon' => base_path('phpstan.neon'),
+            __DIR__ . '/../stubs/psalm.xml' => base_path('psalm.xml'),
         ], 'code-checkers-config');
 
         // register commands
@@ -25,7 +25,6 @@ class GenericsServiceProvider extends ServiceProvider
                 Commands\ResetLocalPassword::class,
                 Commands\MakeGenericCommand::class,
                 Commands\MakeHelperCommand::class,
-                Commands\StubCodeCheckersCommand::class,
             ]);
         }
     }

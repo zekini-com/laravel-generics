@@ -23,8 +23,7 @@ To reset password in a local database environment
 
 To generate or update the code checkers config files:
 
-
-    sail artisan local:code-checkers:stub
+    sail artisan vendor:publish --tag=code-checkers-config
 
 
 To add another generic command
