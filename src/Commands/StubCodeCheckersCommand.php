@@ -35,7 +35,7 @@ class StubCodeCheckersCommand extends Command
         foreach ($configFiles as $configFile) {
             $this->publishes([
                 __DIR__ . '/../stubs/'. $configFile => base_path($configFile),
-            ], 'stubs');
+            ]);
         }
 
         return Command::SUCCESS;

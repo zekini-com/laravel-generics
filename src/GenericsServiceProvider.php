@@ -13,6 +13,11 @@ class GenericsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__ . '../../stubs/ecs.php' => base_path('ecs.php'),
+            __DIR__ . '../../stubs/phpstan.neon' => base_path('phpstan.neon'),
+            __DIR__ . '../../stubs/psalm.xml' => base_path('psalm.xml'),
+        ], 'code-checkers-config');
 
         // register commands
         if ($this->app->runningInConsole()) {
