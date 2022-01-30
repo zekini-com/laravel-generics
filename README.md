@@ -13,17 +13,17 @@ The **zekini/laravel-generics** package allows us to store our generic classes i
 
     sail artisan vendor:publish --tag=zekini-config
 
+    sail artisan migrate
+
 **Usage**
 
 To reset password in a local database environment
 
     sail artisan local:password-reset --password=password
 
-
 To generate or update the code checkers config files:
 
     sail artisan vendor:publish --tag=zekini-config --force
-
 
 To add another generic command
 
@@ -49,12 +49,25 @@ To add another generic helper
 
 **Standard Packages**
 
+    https://github.com/arcanedev/log-viewer
+    https://github.com/barryvdh/laravel-dompdf
+    https://github.com/laravel/jetstream
+    https://github.com/livewire/livewire
+    https://github.com/mediconesystems/livewire-datatables
+    https://github.com/spatie/laravel-activitylog
+    https://github.com/spatie/laravel-permission
+    https://github.com/maatwebsite/excel
+    https://github.com/mattlibera/livewire-flash
     https://github.com/spatie/laravel-backup
-
     https://github.com/spatie/laravel-schedule-monitor
 
-    https://github.com/ARCANEDEV/LogViewer
+**Standard Dev Packages**
 
+    https://github.com/barryvdh/laravel-debugbar
+    https://github.com/nunomaduro/larastan
+    https://github.com/protoqol/prequel
+    https://github.com/symplify/easy-coding-standard
+    https://github.com/vimeo/psalm
 
 **Removed to be re-added once conflict is resolved**
         "spatie/laravel-backup"

@@ -3,10 +3,16 @@
     "description": "A simple package to encapsulate all of our generic classes at Zekini to a package we can require in all our projects",
     "type": "library",
     "license": "MIT",
-    "authors": [{
-        "name": "Keania Niate Eric",
-        "email": "support@zekini.com"
-    }],
+    "authors": [
+        {
+            "name": "Keania Niate Eric",
+            "email": "keania@zekini.com"
+        },
+        {
+            "name": "Llewellyn du Randt",
+            "email": "llewellyn@zekini.com"
+        }
+    ],
     "minimum-stability": "dev",
     "require": {
         "php": "^8.0",

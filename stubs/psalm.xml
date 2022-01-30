@@ -28,7 +28,7 @@
 
         <NoValue>
             <errorLevel type="suppress">
-                <directory name="tests" />
+                <directory name="tests" /> // False postive on markTestSkipped
             </errorLevel>
         </NoValue>
 
