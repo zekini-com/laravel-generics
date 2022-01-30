@@ -18,27 +18,36 @@ The **zekini/laravel-generics** package allows us to store our generic classes i
 To reset password in a local database environment
 
 
-    ./vendor/bin/sail artisan local:password-reset --password=password
+    sail artisan local:password-reset --password=password
 
 
 To generate or update the code checkers configs:
 
 
-    ./vendor/bin/sail artisan local:code-checkers:stub
+    sail artisan local:code-checkers:stub
 
 
 To add another generic command
 
-    ./vendor/bin/sail artisan generic:command TestCommand
+    sail artisan generic:command TestCommand
 
 To add another generic helper
 
-    ./vendor/bin/sail artisan generic:helper TestHelper
+    sail artisan generic:helper TestHelper
 
 **Available Helpers**
 
     use Zekini\Generics\Helpers\ArrayHelper;
+    use Zekini\Generics\Helpers\ArrayToObjectHelper;
+    use Zekini\Generics\Helpers\CsvHelper;
     use Zekini\Generics\Helpers\EnvironmentHelper;
+    use Zekini\Generics\Helpers\FileHelper;
+    use Zekini\Generics\Helpers\FlashHelper;
+    use Zekini\Generics\Helpers\ForeignKeyHelper;
+    use Zekini\Generics\Helpers\HttpHelper;
+    use Zekini\Generics\Helpers\LoggingHelper;
+    use Zekini\Generics\Helpers\StringHelper;
+    use Zekini\Generics\Helpers\UIHelper;
 
 **Standard Packages**
 

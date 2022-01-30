@@ -26,16 +26,16 @@ class StubCodeCheckersCommand extends Command
             return Command::FAILURE;
         }
 
-        $rootOfRepo = '';
-
         $configFiles = [
-            'stubs/ecs.php',
-            'stubs/phpstan.neon',
-            'stubs/psalm.xml',
+            'ecs.php',
+            'phpstan.neon',
+            'psalm.xml',
         ];
 
         foreach ($configFiles as $configFile) {
-            Storage::copy($configFile, $rootOfRepo);
+            $this->publishes([
+                __DIR__ . '/../stubs/'. $configFile => base_path($configFile),
+            ], 'stubs');
         }
 
         return Command::SUCCESS;
