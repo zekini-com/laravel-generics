@@ -74,8 +74,8 @@ class GenericsServiceProvider extends ServiceProvider
     private static function undoPreviousMigrations(array $tablesArray): void
     {
         foreach ($tablesArray as $table) {
-            Schema::dropIfExists($table);
-            DB::table('migrations')->where('migration', 'like', '%' . $table . '%')->delete();
+            // Schema::dropIfExists($table);
+            // DB::table('migrations')->where('migration', 'like', '%' . $table . '%')->delete();
         }
     }
 
