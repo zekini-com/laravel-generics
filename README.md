@@ -12,6 +12,9 @@ The **zekini/laravel-generics** package allows us to store our generic classes i
     composer require zekini/laravel-generics
 
     sail artisan vendor:publish --tag=zekini-config
+    sail artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-migrations"
+    sail artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-config"
+    sail artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
 
     sail artisan migrate
 
