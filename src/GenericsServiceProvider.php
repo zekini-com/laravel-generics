@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Zekini\Generics;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class GenericsServiceProvider extends ServiceProvider
