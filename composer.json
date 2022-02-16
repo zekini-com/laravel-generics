@@ -21,7 +21,7 @@
         "doctrine/dbal": "4.0.x-dev",
         "fakerphp/faker": "^1.19",
         "laravel/jetstream": "dev-master",
-        "livewire/livewire": "dev-master",
+        "livewire/livewire": "^2.4.4",
         "mediconesystems/livewire-datatables": "dev-master",
         "spatie/laravel-activitylog": "dev-main",
         "spatie/laravel-permission": "^5.4",
