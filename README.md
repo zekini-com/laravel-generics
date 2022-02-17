@@ -60,7 +60,6 @@ To add another generic helper
     https://github.com/spatie/laravel-activitylog
     https://github.com/spatie/laravel-permission
     https://github.com/maatwebsite/excel
-    https://github.com/mattlibera/livewire-flash
     https://github.com/spatie/laravel-backup
     https://github.com/spatie/laravel-schedule-monitor
 

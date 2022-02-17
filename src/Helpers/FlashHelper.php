@@ -1,27 +1,19 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Zekini\Generics\Helpers;
 
 class FlashHelper extends BaseHelper
 {
-
-
-    public static function success(string $msg, object $object): void
+    // Deprecated. Leave here for backward compatibilty
+    public static function success(string $msg, ?object $object = null): void
     {
-        /**
-         * @psalm-suppress UndefinedMethod
-         * @psalm-suppress InvalidArgument
-         */
-        flash($msg)->success()->livewire($object);
+        session()->flash('message', $msg);
     }
 
-
-    public static function successRedirect(string $msg):void
+    public static function successRedirect(string $msg): void
     {
-        /**
-         * @psalm-suppress UndefinedMethod
-         */
-        flash($msg)->success();
+        session()->flash('message', $msg);
     }
 }
