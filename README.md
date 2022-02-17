@@ -74,4 +74,4 @@ To add another generic helper
 **Removed to be re-added once conflict is resolved**
         "spatie/laravel-backup"
         "spatie/laravel-schedule-monitor"
-        
+        "arcanedev/log-viewer"
