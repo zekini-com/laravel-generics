@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab64e3daef67a1250d6809a20b867ce7",
+    "content-hash": "b67b4ed49ff59a7106ca76e49ffaa0de",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
-            "version": "dev-master",
+            "version": "9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ARCANEDEV/LogViewer.git",
@@ -32,7 +32,6 @@
                 "orchestra/testbench-core": "^7.0",
                 "phpunit/phpunit": "^9.5.10"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -11322,7 +11321,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "arcanedev/log-viewer": 20,
         "barryvdh/laravel-dompdf": 20,
         "doctrine/dbal": 20,
         "laravel/jetstream": 20,
