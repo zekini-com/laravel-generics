@@ -31,8 +31,8 @@
         "barryvdh/laravel-debugbar": "^3.6",
         "nunomaduro/collision": "^6.1",
         "nunomaduro/larastan": "^2.0",
-        "orchestra/testbench": "6.x-dev",
-        "phpunit/phpunit": "dev-master",
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5.10",
         "protoqol/prequel": "^1.22",
         "symplify/easy-coding-standard": "^10.0",
         "vimeo/psalm": "dev-master"
