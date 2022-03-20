@@ -8,24 +8,24 @@ use Illuminate\Support\Facades\App;
 
 class EnvironmentHelper extends BaseHelper
 {
+    public static function isDevelopment(): bool
+    {
+        return App::environment('development') ? true : false;
+    }
+
+    public static function isLiveData(): bool
+    {
+        return self::isStaging() && self::isProd();
+    }
+
     public static function isLocal(): bool
     {
         return App::environment('local') ? true : false;
     }
 
-    public static function isStaging(): bool
+    public static function isNotDevelopment(): bool
     {
-        return App::environment('staging') ? true : false;
-    }
-
-    public static function isTesting(): bool
-    {
-        return App::environment('testing') ? true : false;
-    }
-
-    public static function isProd(): bool
-    {
-        return App::environment('production') ? true : false;
+        return ! self::isDevelopment();
     }
 
     public static function isNotLocal(): bool
@@ -46,6 +46,26 @@ class EnvironmentHelper extends BaseHelper
     public static function isNotTesting(): bool
     {
         return ! self::isTesting();
+    }
+
+    public static function isProd(): bool
+    {
+        return App::environment('production') ? true : false;
+    }
+
+    public static function isStaging(): bool
+    {
+        return App::environment('staging') ? true : false;
+    }
+
+    public static function isTestData(): bool
+    {
+        return ! self::isLiveData();
+    }
+
+    public static function isTesting(): bool
+    {
+        return App::environment('testing') ? true : false;
     }
 
     public static function exitIfLocal(string $class, int $line, string $message = null): void
