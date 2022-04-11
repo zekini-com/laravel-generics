@@ -15,7 +15,7 @@ class EnvironmentHelper extends BaseHelper
 
     public static function isLiveData(): bool
     {
-        return self::isStaging() && self::isProd();
+        return self::isStaging() || self::isProd();
     }
 
     public static function isLocal(): bool
