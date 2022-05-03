@@ -36,6 +36,9 @@ To add another generic helper
 
     sail artisan generic:helper TestHelper
 
+To use the pdf mergeer
+
+
 **Available Helpers**
 
     use Zekini\Generics\Helpers\ArrayHelper;
@@ -49,6 +52,8 @@ To add another generic helper
     use Zekini\Generics\Helpers\LoggingHelper;
     use Zekini\Generics\Helpers\StringHelper;
     use Zekini\Generics\Helpers\UIHelper;
+    use Zekini\Generics\Helpers\TimezoneHelper;
+    use Zekini\Generics\Helpers\PDFMergeHelper;
 
 **Standard Packages**
 
@@ -62,6 +67,10 @@ To add another generic helper
     https://github.com/maatwebsite/excel
     https://github.com/spatie/laravel-backup
     https://github.com/spatie/laravel-schedule-monitor
+    https://github.com/Webklex/laravel-pdfmerger
+    https://github.com/barryvdh/laravel-snappy
+    https://github.com/h4cc/wkhtmltoimage-amd64
+    https://github.com/h4cc/wkhtmltopdf-amd64
 
 **Standard Dev Packages**
 
@@ -75,3 +84,17 @@ To add another generic helper
         "spatie/laravel-backup"
         "spatie/laravel-schedule-monitor"
         "arcanedev/log-viewer"
+
+## Snappy config 
+The main change to this config file (config/snappy.php) will be the path to the binaries.
+
+For example, when loaded with composer, the line should look like:
+
+`'binary' => base_path('vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64')`
+
+For windows users you'll have to add double quotes to the bin path for wkhtmltopdf:
+
+`'binary' => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"'`
+
+For mac users what i simply did was install the macos executables for both libraries
+
