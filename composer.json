@@ -16,7 +16,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.0",
-        "barryvdh/laravel-dompdf": "^0.9.0",
+        "barryvdh/laravel-dompdf": "^1.0.0",
          "doctrine/dbal": "^3.2",
         "fakerphp/faker": "^1.19",
         "laravel/jetstream": "3.x-dev",
