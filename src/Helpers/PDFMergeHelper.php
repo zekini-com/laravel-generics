@@ -14,6 +14,10 @@ class PDFMergeHelper extends BaseHelper
 
     public static function mergeFromPath(array $pdfPaths): string
     {
+        $path = storage_path('tmp');
+        if (! file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
         $merger = PDFMergerFacade::init();
 
         foreach ($pdfPaths as $path) {
@@ -31,6 +35,11 @@ class PDFMergeHelper extends BaseHelper
 
     public static function mergeFromView(array $pdfViews): string
     {
+        $path = storage_path('tmp');
+        if (! file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+        
         $merger = PDFMergerFacade::init();
 
         foreach ($pdfViews as $view => $data) {
