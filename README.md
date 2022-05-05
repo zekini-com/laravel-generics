@@ -106,3 +106,15 @@ In general follow the instructions here to setup providers and alias
 
 https://github.com/Webklex/laravel-pdfmerger
 
+
+## Realtime notification
+Jquery is required for this to work
+
+to use the realtime notification follow the laravel setup for notifications using database
+
+https://laravel.com/docs/9.x/notifications#database-notifications
+
+To get access to javascript 
+
+`php artisan vendor:publish --tag=laravel-generics:public`
+
