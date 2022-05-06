@@ -65,6 +65,10 @@ class GenericsServiceProvider extends ServiceProvider
             ], 'zekini-config');
 
             $this->publishes([
+                __DIR__.'/../.github/workflows' => base_path('.github/workflows'),
+            ], 'laravel-generics:workflows');
+
+            $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/zekini/generics'),
             ], 'laravel-generics:views');
 
