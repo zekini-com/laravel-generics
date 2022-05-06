@@ -87,7 +87,6 @@ To use the pdf mergeer
 **Removed to be re-added once conflict is resolved**
         "spatie/laravel-backup"
         "spatie/laravel-schedule-monitor"
-        "arcanedev/log-viewer"
 
 ## PDF Merger
 The main change to this config file (config/snappy.php) will be the path to the binaries.
