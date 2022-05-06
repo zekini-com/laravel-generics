@@ -118,3 +118,6 @@ To get access to javascript
 
 `php artisan vendor:publish --tag=laravel-generics:public`
 
+## Public workflows
+`php artisan vendor:publish --provider="Zekini\Generics\GenericsServiceProvider" --tag="laravel-generics:workflows"`
+

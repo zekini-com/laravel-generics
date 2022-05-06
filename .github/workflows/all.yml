@@ -1,4 +1,4 @@
-name: Generic checks & tests on any push
+name: Generic checks & tests on any push test
 
 on: "push"
 
