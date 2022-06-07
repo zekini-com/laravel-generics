@@ -18,6 +18,10 @@ The **zekini/laravel-generics** package allows us to store our generic classes i
 
     sail artisan migrate
 
+    this package uses jetsream to proceed after installation 
+    sail artisan jetstream:install livewire
+    npm install && npm run dev
+
 **Usage**
 
 To reset password in a local database environment
@@ -84,7 +88,7 @@ To use the pdf mergeer
         "spatie/laravel-backup"
         "spatie/laravel-schedule-monitor"
 
-## Snappy config 
+## PDF Merger
 The main change to this config file (config/snappy.php) will be the path to the binaries.
 
 For example, when loaded with composer, the line should look like:
@@ -96,4 +100,23 @@ For windows users you'll have to add double quotes to the bin path for wkhtmltop
 `'binary' => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"'`
 
 For mac users what i simply did was install the macos executables for both libraries
+
+In general follow the instructions here to setup providers and alias
+
+https://github.com/Webklex/laravel-pdfmerger
+
+
+## Realtime notification
+Jquery is required for this to work
+
+to use the realtime notification follow the laravel setup for notifications using database
+
+https://laravel.com/docs/9.x/notifications#database-notifications
+
+To get access to javascript 
+
+`php artisan vendor:publish --tag=laravel-generics:public`
+
+## Public workflows
+`php artisan vendor:publish --provider="Zekini\Generics\GenericsServiceProvider" --tag="laravel-generics:workflows"`
 
